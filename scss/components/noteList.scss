@@ -16,6 +16,10 @@
             margin-bottom: 10px;
         }
 
+        textarea {
+            resize: vertical;
+        }
+
         .buttons {
             position: relative;
             button:last-child {

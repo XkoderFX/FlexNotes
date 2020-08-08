@@ -9,7 +9,7 @@
     @include focusEffect();
 }
 
-.Xinput-text {
+@mixin input {
     font-family: inherit;
     width: 100%;
     padding: 0.6em;
@@ -18,6 +18,14 @@
     border: 1px solid #ced4da;
     font-size: 1rem;
     @include focusEffect();
+}
+
+.Xinput-text {
+    @include input();
+}
+
+.Xtextarea {
+    @include input();
 }
 
 .Xcheckbox {

@@ -35,6 +35,9 @@ header nav .searchBtn {
 .Notes #noteEditor input[type=text] {
   margin-bottom: 10px;
 }
+.Notes #noteEditor textarea {
+  resize: vertical;
+}
 .Notes #noteEditor .buttons {
   position: relative;
 }
