@@ -1,0 +1,19 @@
+.Notes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    .Notes__note {
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid gray;
+        border-radius: 0.4em;
+
+        p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 12;
+            -webkit-box-orient: vertical;
+        }
+    }
+}
