@@ -27,6 +27,30 @@
                 <h3 id="title">Hello</h3>
                 <p id="content">content</p>
             </div>
+
+            <div id="noteEditor">
+                <h3>Take a note</h3>
+                <input
+                    id="title"
+                    type="text"
+                    placeholder="title"
+                    class="Xinput-text"
+                />
+                <input
+                    id="content"
+                    type="text"
+                    placeholder="content"
+                    class="Xinput-text"
+                />
+
+                <div class="buttons">
+                    <button id="saveBtn" class="Xbtn-primary">save</button>
+                    <button id="closeBtn" class="Xbtn-primary">close</button>
+                    <button id="deleteBtn" class="Xbtn-toggler">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
+            </div>
         </main>
         <script src="js/mainController.js"></script>
     </body>
