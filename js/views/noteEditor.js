@@ -39,6 +39,7 @@ export default class NoteEditor {
 
         saveBtnDOM.addEventListener("click", () => {
             if (titleInput.value.length > 0) {
+                this.close();
                 this._onClickSave(titleInput.value, contentInput.value);
             }
         });
