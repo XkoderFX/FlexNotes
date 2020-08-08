@@ -19,40 +19,6 @@ header nav .searchBtn {
   margin-left: 10px;
 }
 
-.subjectBar {
-  transition: all 0.3s linear;
-  transform: translateX(-100%);
-  background-color: #1e62a8;
-  top: 60px;
-  left: 0;
-  position: fixed;
-  min-width: 200px;
-  height: 100%;
-  box-shadow: 1px 1px 1px #ced4da;
-}
-.subjectBar.open {
-  transition: all 0.3s linear;
-  transform: translateX(0);
-}
-@media (max-width: 400px) {
-  .subjectBar.open {
-    width: 100%;
-    left: 0;
-  }
-}
-.subjectBar .subjectBar__list {
-  list-style-type: none;
-  padding: 0px;
-}
-.subjectBar .subjectBar__list li {
-  color: white;
-  padding: 20px;
-  border-bottom: 1px solid rgba(200, 200, 200, 0.1);
-}
-.subjectBar .subjectBar__list li:not(:first-child):hover {
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
 * {
   box-sizing: border-box;
 }

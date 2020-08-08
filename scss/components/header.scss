@@ -21,39 +21,3 @@ header {
         }
     }
 }
-
-.subjectBar {
-    &.open {
-        transition: all 0.3s linear;
-        transform: translateX(0);
-        @media (max-width: 400px) {
-            width: 100%;
-            left: 0;
-        }
-    }
-
-    transition: all 0.3s linear;
-    transform: translateX(-100%);
-    background-color: darken($color: #226fbe, $amount: 5%);
-    top: 60px;
-    left: 0;
-    position: fixed;
-    min-width: 200px;
-    height: 100%;
-    box-shadow: 1px 1px 1px #ced4da;
-
-    .subjectBar__list {
-        list-style-type: none;
-        padding: 0px;
-        li {
-            &:not(:first-child) {
-                &:hover {
-                    background-color: rgba($color: #000000, $alpha: 0.4);
-                }
-            }
-            color: white;
-            padding: 20px;
-            border-bottom: 1px solid rgba(200, 200, 200, 0.1);
-        }
-    }
-}
