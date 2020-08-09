@@ -94,12 +94,7 @@ header nav .searchBtn {
   resize: vertical;
 }
 .Notes #noteEditor .buttons {
-  position: relative;
-}
-.Notes #noteEditor .buttons button:last-child {
-  position: absolute;
-  top: 0;
-  right: 0;
+  margin-top: 0.6rem;
 }
 .Notes .Notes__note {
   padding: 10px;

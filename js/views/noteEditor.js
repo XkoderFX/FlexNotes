@@ -20,15 +20,13 @@ export default class NoteEditor {
             <div class="buttons">
             <button id="saveBtn"  class="Xbtn-primary">save</button>
             <button id="closeBtn" class="Xbtn-primary">close</button>
-            <button id="deleteBtn" class="Xbtn-toggler">
-                <i class="fas fa-trash-alt"></i>
-            </button>
             </div>
         </div>`;
     }
 
     initLocalEvents() {
         this.initSaveBtn();
+        this.initCloseBtn();
     }
 
     initSaveBtn() {
@@ -43,6 +41,12 @@ export default class NoteEditor {
                 this._onClickSave(titleInput.value, contentInput.value);
             }
         });
+    }
+
+    initCloseBtn() {
+        const deleteBtnDOM = document.getElementById("closeBtn");
+
+        deleteBtnDOM.addEventListener("click", this.close);
     }
 
     open() {
