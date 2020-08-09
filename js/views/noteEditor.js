@@ -33,7 +33,7 @@ export default class NoteEditor {
 
     initSaveBtn() {
         const titleInput = document.getElementById("title");
-        const contentInput = document.getElementById("title");
+        const contentInput = document.getElementById("content");
 
         const saveBtnDOM = document.getElementById("saveBtn");
 

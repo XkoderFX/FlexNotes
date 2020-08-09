@@ -1,12 +1,15 @@
 import ManageBar from "./views/manageBar.js";
 import NoteEditor from "./views/noteEditor.js";
+import noteViewer from "./views/noteViewer.js";
 import Note from "./views/note.js";
+import NoteViewer from "./views/noteViewer.js";
 
 class Controller {
     constructor() {
         /** TODO:
          *  initDb
          *  restoreDAta
+         *  noteViewer
          */
         this.initManageBar();
     }
@@ -20,8 +23,13 @@ class Controller {
 
             Editor.onClickSave = (title, content) => {
                 const note = new Note(title, content);
-                console.log(note);
                 note.appendToPage();
+
+                note.onClick = (elem) => {
+                    NoteViewer.open(elem);
+
+                    noteViewer.bindOnSaveClick(() => {});
+                };
             };
         };
     }

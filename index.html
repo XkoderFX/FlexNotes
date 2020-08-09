@@ -23,6 +23,32 @@
         </header>
 
         <main id="noteList" class="Notes"></main>
+
+        <div class="modalContainer">
+            <div id="noteViewer">
+                <input
+                    id="title"
+                    type="text"
+                    placeholder="title"
+                    class="Xinput-text"
+                    required="true"
+                />
+                <textarea
+                    id="content"
+                    placeholder="content"
+                    class="Xinput-text"
+                ></textarea>
+
+                <div class="buttons">
+                    <button id="saveBtn" class="Xbtn-primary">save</button>
+                    <button id="closeBtn" class="Xbtn-primary">close</button>
+                    <button id="deleteBtn" class="Xbtn-toggler">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <script type="module" src="js/mainController.js"></script>
     </body>
 </html>

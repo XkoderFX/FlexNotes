@@ -1,5 +1,7 @@
-@import "./components/header.scss";
-@import "./components/noteList.scss";
+@use "./components/noteViewer.scss";
+@use "./components/header.scss";
+@use "./components/noteList.scss";
+
 * {
     box-sizing: border-box;
 }
