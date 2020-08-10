@@ -38,5 +38,9 @@
             -webkit-line-clamp: 12;
             -webkit-box-orient: vertical;
         }
+
+        &.close {
+            display: none;
+        }
     }
 }

@@ -5,6 +5,7 @@ export default class ManageBar {
 
     initLocalEvents() {
         this.initAddBtn();
+        this.initSearchBtn();
     }
 
     initAddBtn() {
@@ -15,7 +16,20 @@ export default class ManageBar {
         });
     }
 
+    initSearchBtn() {
+        const SearchbtnDOM = document.getElementById("searchInput");
+
+        SearchbtnDOM.addEventListener("input", () => {
+            const searchTitle = document.getElementById("searchInput").value;
+            this._onSearch(searchTitle);
+        });
+    }
+
     set onClickAdd(handler) {
         this._onClickAdd = handler;
+    }
+
+    set onSearch(handler) {
+        this._onSearch = handler;
     }
 }

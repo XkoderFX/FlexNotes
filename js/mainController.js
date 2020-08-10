@@ -6,11 +6,6 @@ import Database from "./modal/database.js";
 
 class Controller {
     constructor() {
-        /** TODO:
-         *  initDb
-         *  restoreDAta
-         *  noteViewer
-         */
         this.initDB()
             .then(() => this.restoreDATA())
             .then(() => this.initManageBar());
@@ -32,6 +27,25 @@ class Controller {
                 this.initNote(note);
             };
         };
+
+        manageBar.onSearch = this.initSearch;
+    }
+
+    initSearch(searchTitle) {
+        //convert NoteList to regular array for use array method filter
+
+        const NoteList = [...document.getElementById("noteList").children];
+
+        //unhide all notes
+        NoteList.forEach((note) => note.classList.remove("close"));
+
+        //hide all notes which not includes the title
+        NoteList.filter(
+            (note) =>
+                !note
+                    .querySelector("#note__title")
+                    .textContent.includes(searchTitle)
+        ).forEach((note) => note.classList.add("close"));
     }
 
     initNote(note) {
@@ -77,11 +91,17 @@ class Controller {
     async restoreDATA() {
         if (this.DB.existed) {
             const notes = await this.DB.getNotes();
-            console.log(notes);
             notes.forEach(({ title, content, _id }) => {
                 const note = new Note(title, content);
+                /**change the id to the one in database
+                 * unless we do that we won't be
+                 * able to remove a note
+                 * because it has new id
+                 * that database didn't have
+                 */
+
                 note.changeID(_id);
-                note.appendToPage();
+                note.appendToPage(); //then append to page
 
                 this.initNote(note);
             });

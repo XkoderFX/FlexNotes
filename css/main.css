@@ -65,7 +65,7 @@ header nav .Xbtn-toggler {
 header nav .manageBar {
   margin-left: 10px;
 }
-header nav .searchBtn {
+header nav .searchIcon {
   position: absolute;
   right: 10px;
   transform: translateY(-50%);
@@ -110,6 +110,9 @@ header nav .searchBtn {
   display: -webkit-box;
   -webkit-line-clamp: 12;
   -webkit-box-orient: vertical;
+}
+.Notes .Notes__note.close {
+  display: none;
 }
 
 * {
