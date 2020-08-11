@@ -8,14 +8,36 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 .modalContainer.open {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modalContainer.open #noteViewer {
+  animation: ShowAnim 0.4s linear forwards;
+}
+@keyframes ShowAnim {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+@media (max-width: 411px) {
+  .modalContainer.open #noteViewer {
+    animation: ShowAnim 0.4s linear forwards;
+  }
+  @keyframes ShowAnim {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 }
 .modalContainer #noteViewer {
   min-width: 300px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: white;
   padding: 15px;
   border: 1px solid gray;

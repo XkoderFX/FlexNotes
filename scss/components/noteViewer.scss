@@ -1,3 +1,17 @@
+@mixin anim($scale) {
+    animation: ShowAnim 0.4s linear forwards;
+
+    @keyframes ShowAnim {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale($scale);
+        }
+    }
+}
+
 .modalContainer {
     display: none;
     position: fixed;
@@ -8,15 +22,20 @@
     background-color: rgba(0, 0, 0, 0.5);
 
     &.open {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        #noteViewer {
+            @include anim(1.2);
+            @media (max-width: 411px) {
+                @include anim(1);
+            }
+        }
     }
 
     #noteViewer {
         min-width: 300px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-
         @media (max-width: 411px) {
             display: flex;
             flex-direction: column;
@@ -29,7 +48,6 @@
             }
         }
 
-        transform: translate(-50%, -50%);
         background-color: white;
         padding: 15px;
         border: 1px solid gray;

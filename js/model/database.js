@@ -56,17 +56,13 @@ export default class Database {
     deleteNote(ID) {
         const transaction = this.DB.transaction("notes", "readwrite");
 
-        console.log(ID);
-
         const notes = transaction.objectStore("notes");
 
         //ensure removing by convert the ID to number
         const deleteRequest = notes.delete(+ID);
 
         return new Promise((r) => {
-            deleteRequest.addEventListener("success", () =>
-                console.log("Hello")
-            );
+            deleteRequest.addEventListener("success", () => r());
         });
     }
 

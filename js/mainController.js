@@ -2,7 +2,7 @@ import ManageBar from "./views/manageBar.js";
 import NoteEditor from "./views/noteEditor.js";
 import NoteViewer from "./views/noteViewer.js";
 import Note from "./views/note.js";
-import Database from "./modal/database.js";
+import Database from "./model/database.js";
 
 class Controller {
     constructor() {
@@ -76,7 +76,6 @@ class Controller {
             });
 
             NoteViewer.bindDeleteBtn((id) => {
-                console.log(id);
                 this.DB.deleteNote(id);
             });
         };
