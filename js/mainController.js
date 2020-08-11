@@ -44,7 +44,8 @@ class Controller {
             (note) =>
                 !note
                     .querySelector("#note__title")
-                    .textContent.includes(searchTitle)
+                    .textContent.toLocaleLowerCase()
+                    .includes(searchTitle.toLocaleLowerCase())
         ).forEach((note) => note.classList.add("close"));
     }
 

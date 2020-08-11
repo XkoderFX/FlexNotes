@@ -20,7 +20,7 @@
     transform: scale(0);
   }
   100% {
-    transform: scale(1.2);
+    transform: scale(1);
   }
 }
 @media (max-width: 411px) {
@@ -37,7 +37,10 @@
   }
 }
 .modalContainer #noteViewer {
-  min-width: 300px;
+  min-width: 400px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
   background-color: white;
   padding: 15px;
   border: 1px solid gray;
@@ -45,8 +48,6 @@
 }
 @media (max-width: 411px) {
   .modalContainer #noteViewer {
-    display: flex;
-    flex-direction: column;
     left: 0px;
     min-width: 100vw;
     height: 100%;
@@ -63,6 +64,7 @@
   margin-bottom: 10px;
 }
 .modalContainer #noteViewer textarea {
+  flex-grow: 1;
   resize: vertical;
 }
 .modalContainer #noteViewer .buttons {
